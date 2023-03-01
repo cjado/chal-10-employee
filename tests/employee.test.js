@@ -1,28 +1,21 @@
-const Employee = require('.../lib/employee')
+const Employee = require('../lib/Employee')
 
-test('creates an employee object', () => {
-    const employee = new Employee('CJ', 21, "cj@gmail.com")
-    expect(employee.name).toEqual(expect.any(String));
-    expect(employee.id).toEqual(expect.any(Number));
-    expect(employee.email).toEqual(expect.any(String));
-});
+describe('Employee class test', () => {
+    describe('init', () => {
+        it('test constructor properties', ()=> {
+            let empObj = new Employee('John', 'jdalfaro4@gmail.com', 1);
 
-test('get employee name', () => {
-    const employee = new Employee('CJ', 21, "cj@gmail.com")
-    expect(employee.getName()).toEqual(expect.any(String));
-})
+            expect(empObj.name).toEqual('John')
+            expect(empObj.email).toEqual('jdalfaro4@gmail.com');
+            expect(empObj.id).toEqual(1);
+            expect(empObj.role).toEqual('Employee');
 
-test('get employee ID', () => {
-    const employee = new Employee('CJ', 21, "cj@gmail.com")
-    expect(employee.getId()).toEqual(expect.any(Number));
-})
+        })
+    })
 
-test('get employee email', () => {
-    const employee = new Employee('CJ', 21, "cj@gmail.com")
-    expect(employee.getEmail()).toEqual(expect.stringContaining(employee.email.toString()));
-})
+    describe('test get name function', () => {
+        let empObj = new Employee("max", "max12@ymail.com", 2);
 
-test('get employee name', () => {
-    const employee = new Employee('CJ', 21, "cj@gmail.com")
-    expect(employee.getRole()).toEqual("Employee");
+        expect(empObj.getName()).toEqual("max")
+    })
 })

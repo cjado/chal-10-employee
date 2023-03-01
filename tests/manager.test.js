@@ -1,11 +1,22 @@
-const Manager = require('.../lib/manager')
+const Manager = require('../lib/Manager')
 
-test('get manager office number', () => {
-    const manager = new Manager('CJ', "cj@gmail.com", 21, 123469)
-    expect(manager.getOfficeNumber()).toEqual(expect.any(Number));
-})
+describe('Manager class test', () => {
+    describe('init', () => {
+        it('test constructor properties', ()=> {
+            let manObj = new Manager('John', 'jdalfaro4@gmail.com', 1, 100);
 
-test('get manager role', () => {
-    const manager = new Engineer('CJ', "cj@gmail.com", 21, 123469)
-    expect(manager.getRole()).toEqual("Manager");
+            expect(manObj.name).toEqual('John')
+            expect(manObj.email).toEqual('jdalfaro4@gmail.com');
+            expect(manObj.id).toEqual(1);
+            expect(manObj.role).toEqual('Manager');
+            expect(manObj.officenumber).toEqual(100);
+
+        })
+    })
+
+    describe('test get office number function', () => {
+        let manObj = new Manager("max", "max12@ymail.com", 2, 101);
+
+        expect(manObj.getOfficeNumber()).toEqual(101)
+    })
 })

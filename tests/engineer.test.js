@@ -1,11 +1,22 @@
-const Engineer = require('.../lib/engineer')
+const Engineer = require('../lib/Engineer')
 
-test('get engineer github', () => {
-    const engineer = new Engineer('CJ', "cj@gmail.com", 21, "cjado.github.io")
-    expect(engineer.getGithub()).toEqual(expect.stringContaining(engineer.github.toString()));;
-})
+describe('Engineer class test', () => {
+    describe('init', () => {
+        it('test constructor properties', ()=> {
+            let engObj = new Engineer('John', 'jdalfaro4@gmail.com', 1, 'jdalfaro4');
 
-test('get engineer role', () => {
-    const engineer = new Engineer('CJ', "cj@gmail.com", 21, "cjado.github.io")
-    expect(engineer.getRole()).toEqual("Engineer");
+            expect(engObj.name).toEqual('John')
+            expect(engObj.email).toEqual('jdalfaro4@gmail.com');
+            expect(engObj.id).toEqual(1);
+            expect(engObj.role).toEqual('Engineer');
+            expect(engObj.github).toEqual('jdalfaro4');
+
+        })
+    })
+
+    describe('test get github function', () => {
+        let engObj = new Engineer("max", "max12@ymail.com", 2, "max123");
+
+        expect(engObj.getGithub()).toEqual("max123")
+    })
 })
