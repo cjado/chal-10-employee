@@ -10,6 +10,9 @@ const Header = function() {
     <link rel="stylesheet" href="./dist/style/style.css" />
   </head>
   <body>
+  <nav class='myTeam'>
+  <h1>My Team</h1>
+  </nav>
     `
 }
 
