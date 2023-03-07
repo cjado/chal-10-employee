@@ -33,7 +33,7 @@ function generateEngineerHtml(engineer){
 }
 function generateManagerHtml(manager){
     return `
-    <div class="Manager">
+    <div class="Manager container">
     <p> Manager Name - ${manager.getName()} </p>
     <p> Manager Email - ${manager.getEmail()} </p>
     <p> Manager Id - ${manager.getId()} </p>
