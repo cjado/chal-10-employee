@@ -1,0 +1,18 @@
+nav {
+    background-color: rgb(225, 49, 49);
+    height: 110px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    padding: 30px;
+    font-family: Verdana;
+}
+
+#Manager {
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    background-color: lightgrey;
+    padding: 1em;
+    display: inline-block;
+}

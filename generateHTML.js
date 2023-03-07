@@ -1,29 +1,33 @@
 const Header = require('./generateheader')
 const Footer = require('./generatefooter')
+
 let generateHTML = function(data) {
     let finalString = ""
     finalString = finalString + Header()
     for(i = 0; i < data.length; i ++) {
         let employeeType = data[i].getRole();
         switch(employeeType) {
-            case "Engineer" :
+            case "Engineer" : 
                 finalString = finalString + generateEngineerHtml(data[i])
                 break;
-            case "Manager" :
+            case "Manager" : 
                 finalString = finalString + generateManagerHtml(data[i])
                 break;
-            case "Intern" :
+
+            case "Intern" : 
                 finalString = finalString + generateInterHtml(data[i])
                 break;
+
         }
     }
     finalString = finalString + Footer()
     console.log(finalString)
     return finalString;
 }
+
 function generateEngineerHtml(engineer){
     return `
-    <div class="Engineer">
+    <div id="Engineer">
     <p> Engineer Name - ${engineer.getName()} </p>
     <p> Engineer Email - ${engineer.getEmail()} </p>
     <p> Engineer Id - ${engineer.getId()} </p>
@@ -31,9 +35,10 @@ function generateEngineerHtml(engineer){
     </div>
     `
 }
+
 function generateManagerHtml(manager){
     return `
-    <div class="Manager container">
+    <div id="Manager">
     <p> Manager Name - ${manager.getName()} </p>
     <p> Manager Email - ${manager.getEmail()} </p>
     <p> Manager Id - ${manager.getId()} </p>
@@ -41,9 +46,10 @@ function generateManagerHtml(manager){
     </div>
     `
 }
+
 function generateInterHtml(intern){
     return `
-    <div class="Intern">
+    <div id="Intern">
     <p> Intern Name - ${intern.getName()} </p>
     <p> Intern Email - ${intern.getEmail()} </p>
     <p> Intern Id - ${intern.getId()} </p>
@@ -51,4 +57,5 @@ function generateInterHtml(intern){
     </div>
     `
 }
+
 module.exports = generateHTML
